@@ -1,0 +1,23 @@
+{
+	"groups": {
+		"active_window_status": {"fg": "darkgreen",   "bg": "gray0",    "attrs": []},
+        "date": { "fg": "black", "bg": "gray8", "attrs": ["bold"]},
+        "time": { "fg": "white", "bg": "black", "attr": ["bold"] },
+		"window_status":        {"fg": "gray70",     "bg": "gray0",    "attrs": []},
+		"hostname": { "fg": "black", "bg": "darkestgreen", "attr": ["bold"] },
+		"activity_status":      {"fg": "yellow",     "bg": "gray0",    "attrs": []},
+		"bell_status":          {"fg": "red",        "bg": "gray0",    "attrs": []},
+        "player":      { "fg": "mediumgreen", "bg":"gray1","attrs": ["bold"] },
+		"uptime":          {"fg": "brightred",        "bg": "black",    "attrs": ["bold"]},
+		"window":               {"fg": "gray6",      "bg": "gray0",    "attrs": []},
+		"window:divider":       {"fg": "gray4",      "bg": "gray0",    "attrs": []},
+		"window:current":       {"fg": "brightgreen", "bg": "black", "attrs": []},
+		"window_name":          {"fg": "green", "bg": "black", "attrs": ["bold"]},
+		"session":              {"fg": "red",      "bg": "darkestgreen",   "attrs": ["bold"]},
+		"session:prefix":       {"fg": "gray90",     "bg": "darkblue", "attrs": ["bold"]},
+		"system_load": { "fg": "gray8", "bg": "white", "attrs": ["bold"]},
+		"system_load_good": { "fg": "lightyellowgreen", "bg": "gray0", "attrs": ["bold"]},
+		"system_load_bad": { "fg": "gold3", "bg": "gray0", "attrs": ["bold"]},
+		"system_load_ugly": { "fg": "orangered", "bg": "gray0", "attrs": ["bold"]}
+	}
+}

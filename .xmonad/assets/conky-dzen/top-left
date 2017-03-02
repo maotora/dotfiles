@@ -1,0 +1,30 @@
+background no
+out_to_console yes
+out_to_x no 
+update_interval 1
+total_run_times 0
+mpd_host localhost
+
+
+TEXT
+# -------------------------------------------------------------------------- 
+# Network Usage
+# -------------------------------------------------------------------------- 
+^fg(\#393939)  \
+^fg()\
+${execi 1 .xmonad/assets/scripts/netinfo}\
+^fg(\#393939) \
+# -------------------------------------------------------------------------- 
+^fg(\#2980b9)^i(.xmonad/assets/deco/mt2.xbm)^fg()\
+^bg(\#2980b9)  \
+# -------------------------------------------------------------------------- 
+# Network Usage
+# -------------------------------------------------------------------------- 
+^fg(\#393939)\
+:: ^fg()\
+^i(.xmonad/assets/monitor/net_down.xbm)\
+ ${downspeedf wlan0} \
+^i(.xmonad/assets/monitor/net_up.xbm) ${upspeedf wlan0}\
+^fg(\#393939) \
+# -------------------------------------------------------------------------- 
+^bg()^fg(\#2980b9)^i(.xmonad/assets/deco/mr1.xbm)^fg()\

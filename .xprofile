@@ -1,0 +1,8 @@
+#!/bin/sh
+xrandr --output HDMI1 --auto --right-of eDP1
+
+#Switching the FUCKING annoying bell off..
+xset -b
+
+#Start redshift
+redshift & 

@@ -1,0 +1,35 @@
+##### Config file for torrtux ####
+
+#Default url : http://thepiratebay.am Change if you need a tpb proxy (a list here : http://proxybay.info/) Do not add a slash at the end of the url 
+site = http://thepiratebay.se
+#site = https://thepiratebay.am
+
+#### Torrent manager ####
+#Deluge
+#torrent_client = deluge
+
+#Transmission (replace transmission-cli by transmission-gtk, -qt, etc. if needed
+#torrent_client = transmission-cli
+torrent_client = "transmission-remote --add"
+
+#Rtorrent
+#torrent_client = rtorrent
+
+#Vuze
+#torrent_client = vuze
+
+
+#### Subs ####
+#If you want the subs research (yes or no)
+subs = no
+
+#Subs languages for ex. langsubs = eng,fre ISO 639-2 codes (see http://en.wikipedia.org/wiki/List_of_ISO_639-2_codes) 
+langsubs = eng
+
+
+#### Displaying ####
+#Display (0 = large 1 = compact)
+compact = 1
+
+#Comments (yes or no)
+comments = yes

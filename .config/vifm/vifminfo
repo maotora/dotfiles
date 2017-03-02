@@ -1,0 +1,87 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/home/niggacode/
+	..
+1470051214
+'b
+	/home/niggacode/bin/
+	..
+1470051214
+'h
+	/home/niggacode/
+	..
+1470051214
+'z
+	/home/niggacode/.config/vifm
+	..
+1470051214
+
+# Bookmarks:
+
+# TUI:
+al
+q0
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/home/niggacode
+	Pictures
+6
+d/home/niggacode/Pictures
+	Webcam
+3
+d/home/niggacode
+	Public
+10
+d
+
+# Right window history (oldest to newest):
+D/home/niggacode
+	Videos
+12
+D/home/niggacode/Videos
+	youtube
+7
+D/home/niggacode/Videos/youtube
+	Heaven is for real Soundtracks
+6
+D/home/niggacode/Videos/youtube/Heaven is for real Soundtracks
+	01. Lord's Prayer _ Driving - Heaven Is For Real Soundtrack-GYN3CQmBA5s.mp4
+1
+D/home/niggacode/Videos/youtube
+	ansible & docker
+8
+D
+
+# Command line history (oldest to newest):
+:setglobal
+:exit
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+
+# Local filter history (oldest to newest):
+
+# Registers:
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+
+# State:
+f
+i1
+[.1
+[F
+F
+I1
+].1
+]F
+s0

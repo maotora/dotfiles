@@ -1,0 +1,39 @@
+#!/bin/sh
+lock() {
+    i3lock
+}
+
+{
+
+case "$1" in
+    dock)
+        docking
+        ;;
+    lock)
+        i3lock-wrapper
+        ;;
+    logout)
+        i3-msg exit
+        ;;
+    suspend)
+        i3lock-wrapper && systemctl suspend
+        ;;
+    hibernate)
+        i3lock-wrapper && systemctl suspend
+        #hibernate makes my computer sick to it's stomach!
+        ;;
+    reboot)
+        systemctl reboot
+        ;;
+    shutdown)
+        systemctl poweroff
+        ;;
+    *)
+        echo "Usage: $0 {docking|lock|logout|suspend|hibernate|reboot|shutdown}"
+        exit 2
+esac
+
+}
+
+exit 0
+

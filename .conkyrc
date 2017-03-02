@@ -1,0 +1,77 @@
+#Fonctionnement de conky 
+  total_run_times 0			#Temps en secondes ; 0 = toujours actif
+  background yes			#Pour que conky tourne en arrière plan ; no = pour les tests
+
+#Réglages système
+  cpu_avg_samples 1			#Nb d'échantillons pour calculer la moyenne d'utilisation CPU
+  net_avg_samples 2			#Nb d'échantillons pour calculer la moyenne d'utilisation CPU
+
+#Mémoire
+  double_buffer yes			#Éviter le clignotement
+  no_buffers yes			#Soustraire les mémoires tampons de la mémoire utilisée
+  text_buffer_size 1024			#Taille du cache pour le texte
+
+#Affichage
+  out_to_console no			#Affiche le texte sur la sortie standard
+  update_interval 1			#Taux de rafraîchissement de la fenêtre (s)
+
+#Fenêtre conky
+  alignment top_left			#Alignement
+ #---
+  minimum_size 400 10			#Taille minimum (px) ; largeur / hauteur
+  maximum_width 400			#Largeur maximum (px)
+ #---
+  gap_x 888				#Écart avec le bord gauche / droit
+  gap_y 19				#Écart avec le bord haut / bas
+ #---
+  draw_shades no			#Afficher les ombres
+  draw_outline no			#Afficher les contours de fenêtre
+  draw_borders no			#Afficher des contours autour des blocs de texte
+  border_width 1			#Largeur du contour
+  border_inner_margin 1			#Largeur des marges
+ #---
+  own_window yes			#Utiliser sa propre fenêtre
+  own_window_type override 		#Type de fenêtre ; normal / override / desktop
+  own_window_transparent yes		#Pseudo transparence
+
+#Mise en forme
+  use_xft yes				#Utiliser Xft (polices lissées etc)
+  xftalpha .1				#Utiliser Xft
+  override_utf8_locale yes 		#Force l'UTF8
+  uppercase no				#Tout le texte en majuscule
+  use_spacer right			#Ajoute des espaces après certains objets (qu'avec des polices fixes)
+ #---
+  xftfont saxMono:size=9 		#Police par défaut
+ #---
+  default_bar_size 46 3			#Barre par défaut (longeur hauteur)
+  stippled_borders 5			#Taille des pointillés
+
+#Couleurs
+  default_color FFFFFF 			#Couleur par défaut
+  default_shade_color 333333		#Couleur des ombres
+  default_outline_color black		#Couleur des contours
+ #---
+  color1 303030				#Gris
+  color2 D6D6D6				#Argenté
+  color3 637567				#Vert
+
+ #---
+  short_units yes			#Unités courtes
+  pad_percents 2			#Unité à 2 décimales
+
+#Prise en charge du LUA
+  lua_load $HOME/.i3/conky/clock.lua
+  lua_draw_hook_pre clock_rings
+
+
+TEXT
+${color2}${offset 86}${cpugraph cpu6 30,1}${voffset -1}${cpugraph cpu6 0,50}
+${voffset -40}${offset 140}${font Digital\-7:size=19}${time %H %M %S}${color2}${offset -92}  :  :  ${font}${color2}
+${voffset -5}${offset 140}${cpugraph cpu6 0,96}
+${voffset -11}${offset 234}${cpugraph cpu6 30,1}${voffset 29}${cpugraph cpu6 0,146}
+${voffset -53}${font saxMono:size=8}${goto 264}${exec date +%B | sed 's/^./\U&/g'}${color2}${goto 360}${time %Y}
+
+${color2}${execp cal | sed '1d ; s/^/ /g ; s/$/ /g ; s/'" $(date +%e)"'/\${color2}'" $(date +%e)"'\${color3}/1 ; s/^/\${goto 258}/g'}${color3}
+
+${offset 264}Uptime   ${color2}${uptime}${color2}
+${voffset -109}${offset 234}${cpugraph cpu6 109,1}${voffset 108}${cpugraph cpu6 0,146}${voffset -315}

@@ -1,0 +1,42 @@
+#!/bin/bash
+# ------------------------------------------------------------------
+#
+#     Scripts/volctl
+#     Description: Script for controlling the volume while displaying
+#                  a nice output via dzen.
+#     Author: Pat Brisbin
+#             (Modified) Alex Sánchez <kniren@gmail.com>
+#
+# ------------------------------------------------------------------
+# we use a fifo to buffer the repeated commands that are common with 
+# volume adjustment
+pipe='/tmp/volpipe'
+
+# define some arguments passed to dzen to determine size and color.
+dzen_args=( -tw 165 -h 20 -x 600 -y 50 -bg '#101010' )
+
+# similarly for gdbar
+gdbar_args=( -w 150 -h 3 -fg '#ffffff' -bg '#404040' )
+
+# spawn dzen reading from the pipe (unless it's in mid-action already).
+if [[ ! -e "$pipe" ]]; then
+  mkfifo "$pipe"
+  (dzen2 "${dzen_args[@]}" < "$pipe"; rm -f "$pipe") &
+fi
+if [[ $1 == "up" ]]; then
+    amixer -q set Master 5%+ unmute
+fi
+if [[ $1 == "down" ]]; then
+    amixer -q set Master 5%- unmute
+fi
+level=`amixer get Master | awk 'END{gsub(/\[|\]|%/,"");print $5;}'`
+if [[ $1 == "toggle" ]]; then
+    status=`amixer get Master | awk 'END{gsub(/\[|\]|%/,"");print $6;}'`
+    if [[ $status == "on" ]]; then
+        level=0
+    fi
+    amixer -q set Master toggle
+fi
+
+(echo $level | gdbar "${gdbar_args[@]}"; sleep 1) >> "$pipe"
+sleep 3 & rm /tmp/volpipe

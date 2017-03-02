@@ -1,0 +1,6 @@
+# set browser
+# http://does-not-exist.org/mail-archives/mutt-users/msg18479.html
+COMMAND exec >> /tmp/urlview.out 2>&1; set -x; firefox
+
+#Note: use Ctrl+w to delete word backwards
+#Note: use Ctrl+h to delete char backwards

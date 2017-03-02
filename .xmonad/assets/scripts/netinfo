@@ -1,0 +1,22 @@
+#!/bin/bash
+# ------------------------------------------------------------------
+#
+#     Scripts/netinfo
+#     Description: Script for piping the current ESSID through dzen
+#     Author: Alex Sánchez <kniren@gmail.com>
+#
+# ------------------------------------------------------------------
+
+if [[ $(cat /sys/class/net/enp0s4/carrier) = 1 ]]; then
+    ICON="net_wired.xbm"
+    ESSID="( wired )"
+else
+    ESSID=$(iwconfig wlan0 |  awk -F '"' 'NR==1 {print $2}')
+    ICON="wireless.xbm"
+    if [[ $ESSID = "" ]]; then
+        ICON=""
+    fi
+fi
+
+ICON='^i(/home/epsi/.xmonad/assets/monitor/'"$ICON)"
+echo "$ICON  $ESSID"

@@ -1,0 +1,22 @@
+#!/bin/zsh
+#
+alias mpc="mpc --host 127.0.0.1 --port 6601"
+
+filter() {
+    echo -n '['
+    tr '\n' ' ' | grep -Po '.*(?= \[playing\])|paused' | tr -d '\n'
+    echo -n '] '
+}
+
+replay() {
+    mpc $password stop; mpc $password play
+}
+
+
+case $BLOCK_BUTTON in
+    1) replay | filter ;;  # left click, replay/restart current song
+    3) mpc $password toggle | filter ;;  # right click, pause/unpause
+    4) mpc $password prev   | filter ;;  # scroll up, previous
+    5) mpc $password next   | filter ;;  # scroll down, next
+    *) mpc $password status | filter ;;
+esac

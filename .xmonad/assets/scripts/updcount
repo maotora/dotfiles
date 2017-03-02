@@ -1,0 +1,14 @@
+#!/bin/bash
+# ------------------------------------------------------------------
+#
+#  Scripts/updcount
+#  Description: Script for checking the number of updates available
+#  Author: Alex Sánchez <kniren@gmail.com>
+#
+# ------------------------------------------------------------------
+
+ICON="pacman.xbm"
+NUMBER=`pacman -Qu | wc -l`
+
+ICON='^i(/home/epsi/.xmonad/assets/monitor/'"$ICON)"
+echo "$ICON $NUMBER"

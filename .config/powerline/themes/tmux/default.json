@@ -1,0 +1,53 @@
+{
+	"segments": {
+		"right": [
+            {
+                "function": "powerline.segments.common.players.mpd",
+                "args": {
+                    "host": "127.0.0.1",
+                    "password": "",
+                    "port": 6601,
+
+                    "state_symbols": {
+                        "fallback": "♫",
+                        "play":     "▶",
+                        "pause":    "▮▮",
+                        "stop":     "■"
+                    }
+                },
+                "priority": 50
+            },
+            {
+                "function": "powerline.segments.common.bat.battery",
+                "args": {
+                    "format": "ac_state",
+                    "steps": "5",
+                    "gamify": true,
+                    "full_heart": "♥",
+                    "empty_heart": "♥",
+                    "online": "⚡︎",
+                    "offline": " "
+                },
+                "priority": 50
+            },
+
+			{
+				"function": "powerline.segments.common.sys.system_load",
+				"priority": 50
+			},
+			{
+				"function": "powerline.segments.common.time.date"
+			},
+			{
+				"function": "powerline.segments.common.time.date",
+				"args": {
+					"format": "%H:%M",
+					"istime": true
+				}
+			},
+			{
+				"function": "powerline.segments.common.net.hostname"
+			}
+		]
+	}
+}

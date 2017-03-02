@@ -1,0 +1,26 @@
+#!/bin/bash
+# ------------------------------------------------------------------
+#
+#     Scripts/dateshow
+#     Description: 
+#     Author: Alex Sánchez <kniren@gmail.com>
+#
+# ------------------------------------------------------------------
+#!/bin/bash
+
+background="#000000"
+foreground=white
+highlight="#308888"
+FONT=profont-8
+
+XPOS=1215
+YPOS=19
+WIDTH="120"
+HEIGHT="12"
+LINES="12"
+
+time=$(TZ="Asia/Jakarta" date | awk -F " " '{print $4}')
+calendar=$(cal -1)
+date=$(date | cut -d' ' -f1,2,3,6)
+
+(echo " "; echo "   ^fg($highlight)$date"; echo " "; echo "$calendar"; sleep 9) | dzen2 -fg $foreground -h $HEIGHT -bg $background -fn $FONT -x $XPOS -y $YPOS -w $WIDTH -l $LINES -e 'leaveslave=exit;onstart=uncollapse,unhide;button1=exit;button3=exit'

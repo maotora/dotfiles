@@ -1,0 +1,17 @@
+background no
+out_to_console yes
+out_to_x no 
+update_interval 1
+total_run_times 0
+
+
+TEXT
+^fg(\#2980b9)^i(.xmonad/assets/deco/mr2.xbm)^fg()^bg(\#2980b9)\
+# -------------------------------------------------------------------------- 
+# Clock
+# -------------------------------------------------------------------------- 
+^ca(1, .xmonad/assets/scripts/dateshow)\
+^i(.xmonad/assets/monitor/clock.xbm) \
+${time %a %b %d %H:%M}^fg(\#393939)     \
+^ca()\
+^bg()\

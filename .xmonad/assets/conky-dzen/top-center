@@ -1,0 +1,23 @@
+background no
+out_to_console yes
+out_to_x no 
+update_interval 1
+total_run_times 0
+mpd_host localhost
+
+
+TEXT
+^fg(\#393939)\
+^fg()\
+$if_mpd_playing^fg(\#91BA0D)^i(.xmonad/assets/monitor/music.xbm) ^fg(\#D3D3D3)\
+${mpd_artist} | ${mpd_title}$endif   ^ca()\
+# -------------------------------------------------------------------------- 
+#  Volume
+# -------------------------------------------------------------------------- 
+# Click buttons
+^ca(3, amixer -q set Master toggle)\
+^ca(4, amixer -q set Master 5%+ unmute)\
+^ca(5, amixer -q set Master 5%- unmute)\
+::^fg() ${exec  ~/.xmonad/assets/scripts/alsaperc}^fg(\#393939) \
+^ca()^ca()^ca()\
+

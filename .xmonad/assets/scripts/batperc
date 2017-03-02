@@ -1,0 +1,30 @@
+#!/bin/bash
+# ------------------------------------------------------------------
+#
+#     Scripts/batperc
+#     Description: Script for piping the battery status into dzen
+#     Author: Alex Sánchez <kniren@gmail.com>
+#
+# ------------------------------------------------------------------
+
+BAT=`acpi -b | awk '{gsub(/%,/,""); print $4}'`
+STATUS=`acpi -b | awk '{gsub(/,/,""); print $3}'`
+
+if [[ $BAT -lt 10  ]]; then
+    ICON="bat_empty.xbm"
+    BATBAR=`echo -e "^fg(red)$BAT"\
+        | gdbar -bg "#393939" -fg red -h 1 -w 60`
+    if [[ $STATUS != "Charging" ]]; then
+        notify-send "Warning, battery level below 10 percent" -u critical -t 30000
+    fi
+else
+    ICON="bat_full.xbm"
+    BATBAR=`echo -e "$BAT"\
+        | gdbar -bg "#393939" -fg "#d6d6d6" -h 1 -w 60`
+fi
+
+if [[ $STATUS != "Discharging" ]]; then
+    ICON="ac.xbm"
+fi
+ICON='^i(/home/epsi/.xmonad/assets/monitor/'"$ICON)"
+echo "$ICON $BATBAR"

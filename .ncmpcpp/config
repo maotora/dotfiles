@@ -1,0 +1,50 @@
+lyrics_directory                            = ~/.ncmpcpp/lyrics
+ncmpcpp_directory                           = ~/.ncmpcpp
+mpd_music_dir                               = "/media/EveryThing/Music/Music Audio"
+mpd_host                                    = "127.0.0.1"
+mpd_port                                    = "6601"
+
+autocenter_mode                             = yes
+media_library_primary_tag                   = album_artist
+fetch_lyrics_for_current_song_in_background = no
+follow_now_playing_lyrics                   = yes
+external_editor                             = vim
+
+display_bitrate                             = yes
+display_remaining_time                      = yes
+playlist_show_remaining_time                = yes
+playlist_shorten_total_times                = yes
+playlist_display_mode                       = columns
+playlist_editor_display_mode                = "classic"
+
+browser_display_mode                        = columns
+progressbar_boldness                        = no
+progressbar_elapsed_color                   = white
+progressbar_look                            = ―◆
+progressbar_color                           = "green"
+
+state_flags_color                           = "green"
+state_line_color                            = "green"
+statusbar_color                             = "green"
+search_engine_display_mode                  = "columns"
+song_status_format                          = {{%a - }{%t}}|{%f}
+song_columns_list_format                    = "(25)[green]{a} (40)[]{f} (30)[green]{b} (7f)[green]{l}"
+
+visualizer_in_stereo                        = "yes"
+visualizer_fifo_path                        = "/tmp/mpd.fifo"
+visualizer_output_name                      = "my_fifo"
+visualizer_sync_interval                    = "20"
+visualizer_type                             = "ellipse"
+#visualizer_look                             = "●▮"
+visualizer_sample_multiplier                = "1"
+message_delay_time                          = "3"
+visualizer_color                            = "red,green"
+
+centered_cursor                             = "yes"
+header_window_color                         = "green"
+volume_color                                = "green"
+mouse_list_scroll_whole_page                = "yes"
+lines_scrolled                              = "1"
+enable_window_title                         = "yes"
+
+use_console_editor                          = "yes"
