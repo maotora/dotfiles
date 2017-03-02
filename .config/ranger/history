@@ -6,7 +6,6 @@ dee
 set show_hidden=True
 mkdir new
 search vide
-search pic
 open_with 
 search photo
 search firef
@@ -46,5 +45,6 @@ rename music.png
 rename GeorgeCarlin.png
 rename Music_deepin.png
 d
-delete 
 rename torrent_carlin.png
+search pic
+delete 
