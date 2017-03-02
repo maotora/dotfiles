@@ -49,15 +49,16 @@ yoo looking for.
 
 ### Music & Videos
 
-    mpd –> Music Server
-    ncmpcpp –> Curses Music player (mpd client)
-    mpc –> Terminal mpd client
+    mpd –> <3 Music Server
+    ncmpcpp –> <3 Curses Music player (mpd client)
+    mpc –> <3 Terminal mpd client
+    pacmixer –> Pulseaudio Curses Mixer
     youtube-dl –> Terminal youtube downloder
     cmus –> Terminal Music player
     pianobar –> Pandora.com music player
     cava –> Gives Nice Music Visualizers with custom colors
 
-![Cava](photos/music.png)
+![Music Setup](photos/music.png)
 
 ### Cli Browsers
 
@@ -111,13 +112,9 @@ yoo looking for.
 
 ### References
 
-If i'm missing anything just look at
-[Gotbletu](https://github.com/gotbletu/dotfiles) Since I used to copy some
-scripts from him (by some I mean lots) But I got to my feet now and I make my
-own stuff.
-
-* Check my channel at [Youtube](https://www.youtube.com/channel/UCljD878z-DICmuTCrGQlMUg) I will talk a lot more about my configs there!
-
-### Take it easy it's just a nigga sharing his configurations.
+* [Archlinux](https://archlinux.org) The Linux Distribution I'm using
+* [Archwiki](https://wiki.archlinux.org/index.php) For detailed documentation on most software used
+* [AUR](https://aur.archlinux.org/index.php) For some software mentioned in this repo
+* [Gotbletu](https://github.com/gotbletu/dotfiles) For some scripts used in this repo and more
 
 - Alright Peace!
