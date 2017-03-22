@@ -3133,6 +3133,7 @@ export PATH="$PATH:$HOME/.yarn/bin"
 export LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so'
 export REACT_EDITOR=/usr/bin/vim
 export PATH=${PATH}:${HOME}/.npm/bin
+export PATH=${PATH}:${HOME}/.gem/ruby/2.4.0/bin
 
 nexus () {
     /home/niggacode/Android/Sdk/tools/emulator -netdelay none -netspeed full -avd Nexus_S_API_24

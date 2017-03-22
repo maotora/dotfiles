@@ -10,7 +10,8 @@
 .vim/bundle
 .weechat/logs
 .weechat/weechat.log
-
+.config/ranger/bookmarks
+.config/ranger/history
 .config/4kdownload.com
 .config/akonadi
 .config/akregatorrc
