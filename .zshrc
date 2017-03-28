@@ -48,7 +48,7 @@ zsh-autosuggestions
 
 source $ZSH/oh-my-zsh.sh
 #source $ZSH/custom/plugins/auto-fu.zsh/auto-fu.zsh
-source ~/.zsh/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 #zsh-syntax-highlighting this is a plugin to be added.
 source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 

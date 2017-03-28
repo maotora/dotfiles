@@ -117,4 +117,5 @@ yoo looking for.
 * [AUR](https://aur.archlinux.org/index.php) For some software mentioned in this repo
 * [Gotbletu](https://github.com/gotbletu/dotfiles) For some scripts used in this repo and more
 
-- Alright Peace!
+
+Alright Peace!

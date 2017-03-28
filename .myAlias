@@ -3155,3 +3155,6 @@ watchmanRun() {
     watchman shutdown-server 2> /dev/null \; 
 }
 
+#################### PSQL STuff.... *****************************
+
+alias psql='PAGER="vim -R -u ~/.vimrcpg -" psql'
