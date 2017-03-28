@@ -3071,6 +3071,11 @@ utube(){
     youtube-dl --continue --ignore-errors --retries 3 --format best "$url"
 }
 
+utube_file(){
+    filename=$1
+    youtube-dl --continue --ignore-errors --retries 3 --format best --batch-file "$filename"
+}
+
 #sysChecking(){
     #dstat -tvin --noupdate 5 > dstat.log &" and "(while /bin/true; do ps axlf >> ps.log; sleep 30; done) &
 #}
@@ -3113,7 +3118,7 @@ docking () {
         synclient TapButton1=1;
         synclient TapButton2=3;
         i3 restart 2> /dev/null;
-        figlet -ktc "Docking Complete" | lolcat;
+        figlet -ktc "Undocking Complete" | lolcat;
     else
         xrandr --output eDP1 --off --output HDMI1 --auto ;
         nitrogen --restore 2> /dev/null;
