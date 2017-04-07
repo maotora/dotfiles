@@ -1,17 +1,17 @@
-&quot; Vim syntax file
-&quot; &quot; Language: db output
-&quot; &quot; Maintainer: Jason Munro
+" Vim syntax file
+" " Language: db output
+" " Maintainer: Jason Munro
  
 syn region Heading start=/^ \l/ end=/[-+]\+$/
-syn match Border &quot;|&quot;
-syn match IntVal &quot; \d\+\(\n\| \)&quot;
-syn match NullVal &quot; NULL\(\n\| \)&quot;
-syn match NegVal &quot; -\d\+\(\n\| \)&quot;
-syn match FloatVal &quot; \d\+\.\d\+\(\n\| \)&quot;
-syn match NegFloatVal &quot; -\d\+\.\d\+\(\\n\| \)&quot;
-syn match DateTime &quot;\d\{4}-\d\{2}-\d\{2} \d\{2}:\d\{2}:\d\{2}\(\.\d\{1,}\|\)&quot;
-syn match TrueVal &quot; t\(\n\| \)&quot;
-syn match FalseVal &quot; f\(\n\| \)&quot;
+syn match Border "|"
+syn match IntVal " \d\+\(\n\| \)"
+syn match NullVal " NULL\(\n\| \)"
+syn match NegVal " -\d\+\(\n\| \)"
+syn match FloatVal " \d\+\.\d\+\(\n\| \)"
+syn match NegFloatVal " -\d\+\.\d\+\(\\n\| \)"
+syn match DateTime "\d\{4}-\d\{2}-\d\{2} \d\{2}:\d\{2}:\d\{2}\(\.\d\{1,}\|\)"
+syn match TrueVal " t\(\n\| \)"
+syn match FalseVal " f\(\n\| \)"
  
 hi def Heading ctermfg=246
 hi def IntVal ctermfg=229
