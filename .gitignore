@@ -1,5 +1,5 @@
 .conky
-.tmux/
+.tmux/plugins/*
 .fonts
 .mpd/logs
 .mpd/playlist
