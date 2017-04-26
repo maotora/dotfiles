@@ -1297,13 +1297,9 @@ fi
 # http://ix.io
 post-ix() { "$@" | curl -F 'f:1=<-' ix.io ;}
 
-# copy/paste for linux machines (Mac style)
-# tutorial video: http://www.youtube.com/watch?v=fKP0FLp3uW0
-alias pbcopy='xclip -selection clipboard'	# copy to clipboard, ctrl+c, ctrl+shift+c
-alias pbpaste='xclip -selection clipboard -o'	# paste from clipboard, ctrl+v, ctrl+shitt+v
-alias pbselect='xclip -selection primary -o'	# paste from highlight, middle click, shift+insert
-alias pbdump='pbpaste | pastebinit | pbcopy'	# dump text from clipboard to pastebin server and copy link
+pb_file() { cat "$1" | curl -F c=@- https://ptpb.pw/ }
 
+pb_cmd() { "$1" | curl -F c=@- https://ptpb.pw/ }
 
 # take screenshot fullscreen, single window or draw a box
 # tutorial video: http://www.youtube.com/watch?v=Hh8G1aBp8gc
@@ -3114,16 +3110,16 @@ docking () {
 
     if xrandr | grep "HDMI1 disconnected"; then
         xrandr --output HDMI1 --off --output eDP1 --auto;
-        nitrogen --restore 2> /dev/null;
+        nitrogen --restore > /dev/null 2>&1;
         synclient TapButton1=1;
         synclient TapButton2=3;
-        i3 restart 2> /dev/null;
+        i3 restart > /dev/null 2>&1;
         figlet -ktc "Undocking Complete" | lolcat;
     else
         xrandr --output eDP1 --off --output HDMI1 --auto ;
-        nitrogen --restore 2> /dev/null;
-        xmodmap ~/.Xmodmap 2> /dev/null;
-        i3 restart 2> /dev/null;
+        nitrogen --restore > /dev/null 2>&1;
+        xmodmap ~/.Xmodmap > /dev/null 2>&1;
+        i3 restart > /dev/null 2>&1;
         figlet -ktc "Docking Complete" | lolcat;
     fi
 }
