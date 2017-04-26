@@ -16,6 +16,7 @@
 .weechat/script/plugins
 .weechat/certs
 .weechat/weechat.log
+.weechat/scripts/
 .config/ranger/bookmarks
 .config/ranger/history
 .config/4kdownload.com
@@ -90,6 +91,7 @@
 .config/gtkrc-2.0
 .config/gwenviewrc
 .config/htop
+.config/hub
 .config/ibus
 .config/inkscape
 .config/kactivitymanagerdrc
