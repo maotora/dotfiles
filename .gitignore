@@ -14,6 +14,8 @@
 .weechat/logs
 .weechat/irc.conf
 .weechat/script/plugins
+.weechat/script/
+.weechat/python/
 .weechat/certs
 .weechat/weechat.log
 .weechat/scripts/
