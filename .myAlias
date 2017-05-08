@@ -9,9 +9,9 @@ HISTSIZE=1000
 export HISTTIMEFORMAT="%d/%m/%y %T "		#History list shows digital time and date
 # Set 256 Colors
 # http://blog.sanctum.geek.nz/256-colour-terminals/
-# if [ -e /usr/share/terminfo/x/xterm-256color ]; then
-#    export TERM='xterm-256color'
-# fi
+ if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+    export TERM='xterm-256color'
+ fi
 
 #}}}
 #-------- Exports {{{
@@ -30,7 +30,7 @@ export COMICER=$(find_alt mcomix comix zathura $OPENER )
 export EBOOKER=$(find_alt ebook-viewer $OPENER ) # epub
 export EDITOR=$(find_alt vim emacs nano leafpad gedit pluma $OPENER )
 export FILEMANAGER=$(find_alt pcmanfm thunar nautilus dolphin spacefm enlightenment_filemanager $OPENER )
-export MUSICER=$(find_alt mplayer mpg123 cvlc $OPENER )
+export MUSICER=$(find_alt mpd mplayer mpg123 cvlc $OPENER )
 export PAGER=$(find_alt less more most)
 export PKMGR=$(find_alt yaourt pacman aptitude apt-get yum zypper emerge)
 export PLAYER=$(find_alt vlc cvlc $OPENER )
@@ -1299,7 +1299,7 @@ post-ix() { "$@" | curl -F 'f:1=<-' ix.io ;}
 
 pb_file() { cat "$1" | curl -F c=@- https://ptpb.pw/ }
 
-pb_cmd() { "$1" | curl -F c=@- https://ptpb.pw/ }
+pb_cmd() { "$@" | curl -F c=@- https://ptpb.pw/ }
 
 # take screenshot fullscreen, single window or draw a box
 # tutorial video: http://www.youtube.com/watch?v=Hh8G1aBp8gc
