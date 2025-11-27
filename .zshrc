@@ -4,6 +4,7 @@ alias tmux="tmux -2"
 #------------------------------------------------------
 # ignore duplicates from ~/.zsh_history
 setopt histignoredups
+setopt nonomatch   # don't error on unmatched globs (portable aliases)
 cfg-zsh-history() { $EDITOR $HISTFILE ;}
 # }}}
 #-------- Oh My ZSH {{{
@@ -48,9 +49,12 @@ zsh-autosuggestions
 
 source $ZSH/oh-my-zsh.sh
 #source $ZSH/custom/plugins/auto-fu.zsh/auto-fu.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# optional plugins (guarded so login doesn't error on missing files)
+[ -f "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && \
+    source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 #zsh-syntax-highlighting this is a plugin to be added.
-source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+_zsh_syntax_highlight=${ZSH_SYNTAX_HIGHLIGHTING:-$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh}
+[ -f "$_zsh_syntax_highlight" ] && source "$_zsh_syntax_highlight"
 
 DISABLE_AUTO_TITLE=true
 
@@ -384,10 +388,16 @@ fzf_cd() { zle -I; DIR=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> 
 unsetopt correct_all
 
 # Sourcing node version manager.
-source /usr/share/nvm/init-nvm.sh
+if [ -s /usr/share/nvm/init-nvm.sh ]; then
+    source /usr/share/nvm/init-nvm.sh
+elif [ -s /opt/homebrew/opt/nvm/nvm.sh ]; then
+    source /opt/homebrew/opt/nvm/nvm.sh
+fi
 
 #Including powerline stuff..
-    . $HOME/bin/powerline/bindings/zsh/powerline.zsh
+if [ -f "$HOME/bin/powerline/bindings/zsh/powerline.zsh" ]; then
+    . "$HOME/bin/powerline/bindings/zsh/powerline.zsh"
+fi
 
 #tmux-powerline to show pwd
 PROMPT="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
