@@ -2703,7 +2703,11 @@ alias kde-refresh='kbuildsycoca4'
 
 alias rardir='find * -maxdepth 0 -type d -exec rar a {}.rar {} \;'
 
-DISTRO=$(cat /etc/*-release | head -1 | awk -F\" '{print $(NF-1)}')
+if ls /etc/*-release >/dev/null 2>&1; then
+    DISTRO=$(cat /etc/*-release | head -1 | awk -F\" '{print $(NF-1)}')
+else
+    DISTRO="macOS"
+fi
 
 alias stackexchange='lynx http://column80.com'
 
@@ -3157,10 +3161,9 @@ alias psql='PAGER="vim -R -u ~/.vimrcpg -" psql'
 
 ### ssh-agent to not restart twice.
 
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent > ~/.ssh-agent-thing > /dev/null;
+if ! pgrep -u "$USER" ssh-agent > /dev/null 2>&1; then
+    ssh-agent -s > ~/.ssh-agent-thing 2>/dev/null
 fi
-if [[ "$SSH_AGENT_PID" == "" ]]; then
-    eval "$(<~/.ssh-agent-thing)" > /dev/null;
+if [[ -z "$SSH_AGENT_PID" && -f ~/.ssh-agent-thing ]]; then
+    eval "$(<~/.ssh-agent-thing)" >/dev/null
 fi
-
