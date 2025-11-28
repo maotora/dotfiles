@@ -401,3 +401,6 @@ fi
 
 #tmux-powerline to show pwd
 PROMPT="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+
+# Prefer Node 24 for Vim/CoC and tooling
+export PATH="/opt/homebrew/opt/node@24/bin:$PATH"
