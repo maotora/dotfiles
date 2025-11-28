@@ -212,4 +212,8 @@
 .config/yelp
 .config/youtube-viewer
 .config/Zeal
+# Vim plugin manager artifacts
+.vim/autoload/plug.vim
+.vim/plugged/
+.vim/plugged/*
 .zsh/
